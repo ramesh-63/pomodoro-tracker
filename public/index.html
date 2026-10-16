@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Study Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Pomodoro Study Tracker</div>
+    <div class="topbar-stat">Today <strong id="today-total">0m</strong></div>
+  </header>
+
+  <div class="layout">
+    <aside class="panel timer-panel">
+      <label class="field">
+        <span>Subject <small>(optional)</small></span>
+        <input type="text" id="subject" placeholder="e.g. Math, React, SQL" maxlength="100">
+      </label>
+
+      <div class="dial" id="dial">
+        <svg viewBox="0 0 240 240" aria-label="Drag to set duration">
+          <circle class="dial-track" cx="120" cy="120" r="100"></circle>
+          <circle class="dial-arc" id="dial-arc" cx="120" cy="120" r="100"></circle>
+          <circle class="dial-knob" id="dial-knob" cx="120" cy="20" r="11"></circle>
+        </svg>
+        <div class="dial-center">
+          <p id="display">25:00</p>
+          <span id="dial-label" class="dial-label">drag to set</span>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <button id="minus" class="btn btn-ghost btn-small">−5</button>
+        <button id="plus" class="btn btn-ghost btn-small">+5</button>
+      </div>
+
+      <div class="presets">
+        <button class="chip" data-minutes="15">15 min</button>
+        <button class="chip active" data-minutes="25">25 min</button>
+        <button class="chip" data-minutes="45">45 min</button>
+        <button class="chip" data-minutes="60">60 min</button>
+      </div>
+
+      <div class="progress">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div class="controls">
+        <button id="start" class="btn btn-primary">Start</button>
+        <button id="pause" class="btn btn-secondary" disabled>Pause</button>
+        <button id="reset" class="btn btn-ghost">Reset</button>
+      </div>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </aside>
+
+    <section class="content">
+      <div class="panel">
+        <h2>Daily routine</h2>
+        <ul id="daily-list" class="list"></ul>
+      </div>
+
+      <div class="panel">
+        <h2>Yearly activity</h2>
+        <div id="heatmap"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Recent sessions</h2>
+        <ul id="session-list" class="session-grid"></ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="heatmap.js"></script>
+</body>
+</html>
