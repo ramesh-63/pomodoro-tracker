@@ -4,7 +4,8 @@ A study timer built on the Pomodoro technique. Focus in timed sessions, then see
 
 ## Screenshot
 
-![Pomodoro Study Tracker screenshot](./screenshot.png)
+<img width="1917" height="990" alt="image" src="https://github.com/user-attachments/assets/09d1bb7c-71aa-4ccd-99b4-c8164158ce10" />
+
 
 ## Features
 
